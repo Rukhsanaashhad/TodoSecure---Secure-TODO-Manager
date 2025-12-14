@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TodoSecure 🔐
 
 A secure TODO management application with user authentication.
@@ -16,3 +17,6 @@ A secure TODO management application with user authentication.
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
+=======
+# TodoSecure---Secure-TODO-Manager
+>>>>>>> c0e9c5ff2a58b1084966abbb149190eef28da867
