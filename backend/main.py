@@ -7,10 +7,24 @@ from pydantic import BaseModel, Field, field_validator, EmailStr
 from fastapi.responses import JSONResponse
 import secrets
 import hashlib
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(title="TODO API with Auth", version="1.0.0")
 security = HTTPBearer()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # Ye frontend ko allow karega
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+def read_root():
+    return {"status": "healthy"}
+    
 # In-memory storage
 user_todos: Dict[int, Dict] = {}  # {user_id: {todo_id: todo_data}}
 users_db: Dict[str, Dict] = {}    # {username: user_data}
