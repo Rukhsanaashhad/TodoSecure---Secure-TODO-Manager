@@ -6,7 +6,7 @@ import time
 import json
 
 # FastAPI server URL
-API_URL = "http://localhost:8000"
+API_URL = "https://ashhadkhan-my-todo-api.hf.space"
 
 # Page config
 st.set_page_config(
